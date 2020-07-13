@@ -57,12 +57,11 @@ public abstract class MecanicaDoJogo {
 
 	public int nota() {
 		
-		int a = listaPalavras
+		return listaPalavras
 				  .stream()
 				  .filter(item -> item.isEstaCorreto())
 				  .reduce(0, (subtotal, palavra) -> subtotal + palavra.getPeso(), Integer::sum);
 		
-		return a;
 	}
 	
 	
