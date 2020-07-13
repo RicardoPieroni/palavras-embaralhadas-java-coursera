@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class Principal {
 	
-	private static final int NUMERO_TENTATIVAS_MODO_PRO = 1;
 	
-	private static final int NUMERO_TENTATIVAS_MODO_AMADOR = 2;
 
 	public static final void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
@@ -49,7 +47,7 @@ public class Principal {
 	
 	private static void jogarModoAmador() {
 		Scanner ler = new Scanner(System.in);
-		MecanicaDoJogo mecanica = new MecanicaJogoAmador(NUMERO_TENTATIVAS_MODO_AMADOR);
+		MecanicaDoJogo mecanica = FabricaMecanicaDoJogo.gerar("AMADOR");
 		System.out.println("Vamos lá, sua pontuação será apresentanda a cada tentativa. Neste modo você pode tentar duas vezes!");
 		
 		jogar(mecanica, ler);
@@ -59,7 +57,7 @@ public class Principal {
 
 	public static  void jogarModoPro() {
 		Scanner ler = new Scanner(System.in);
-		MecanicaDoJogo mecanica = new MecanicaJogoProfissional(NUMERO_TENTATIVAS_MODO_PRO);
+		MecanicaDoJogo mecanica = FabricaMecanicaDoJogo.gerar("PRO");
 		System.out.println("Vamos lá, sua pontuação será apresentanda a cada tentativa.  Neste modo você poderá tentar somente uma vez!");
 		
 		jogar(mecanica, ler);
